@@ -1,3 +1,44 @@
 version: 1
 send_anonymous_usage_stats: false
 project_id: 31240566-1168-4610-bc65-c7ef98949c8c
+plugins:
+  extractors:
+  - name: tap-csv
+    variant: meltano
+    pip_url: git+https://gitlab.com/meltano/tap-csv.git
+    config:
+      files:
+      - entity: taxi_zones
+        file: data/taxi_zones.csv
+        keys:
+        - LocationID
+      - entity: calendar_454
+        file: data/454_calendar.csv
+        keys:
+        - Date
+      - entity: taxi_trips
+        file: data/taxi_trips
+        keys:
+        - VendorID
+        - lpep_pickup_datetime
+  loaders:
+  - name: target-postgres
+    variant: datamill-co
+    config:
+      postgres_host: docker.for.mac.localhost
+      postgres_username: rkooijman
+      postgres_database: nyc_taxi_trips
+      postgres_schema: public
+      max_batch_rows: 100000
+      add_upsert_indexes: false
+      persist_empty_tables: true
+  transformers:
+  - name: dbt
+    pip_url: dbt==0.21.0
+    config:
+      target: postgres
+      source_schema: public
+      target_schema: public
+  files:
+  - name: dbt
+    pip_url: git+https://gitlab.com/meltano/files-dbt.git@config-version-2
