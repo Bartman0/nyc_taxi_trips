@@ -7,3 +7,15 @@ models:
         tests:
           - unique
           - not_null
+  - name: stg_data_dictionary
+    columns:
+      - name: field
+        tests:
+          - unique
+          - not_null
+  - name: stg_calendar_454
+    columns:
+      - name: data
+        tests:
+          - unique
+          - not_null

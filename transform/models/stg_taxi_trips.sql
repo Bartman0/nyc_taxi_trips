@@ -18,7 +18,7 @@ with final as (
     , tt.total_amount::decimal(18,5)
     , tt.payment_type
     , tt.trip_type
-    , case when tt.congestion_surcharge = '' then null else tt.congestion_surcharge::int end congestion_surcharge
+    , case when tt.congestion_surcharge = '' then null else tt.congestion_surcharge::decimal(18,5) end congestion_surcharge
     from public.taxi_trips tt
 
 )

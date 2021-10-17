@@ -17,10 +17,14 @@ plugins:
         keys:
         - Date
       - entity: taxi_trips
-        file: data/taxi_trips
+        file: data/taxi_trips/all_trips.csv
         keys:
         - VendorID
         - lpep_pickup_datetime
+      - entity: data_dictionary
+        file: data/data_dictionary.csv
+        keys:
+        - Field
   loaders:
   - name: target-postgres
     variant: datamill-co
