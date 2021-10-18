@@ -16,19 +16,23 @@ plugins:
         file: data/454_calendar.csv
         keys:
         - Date
-      - entity: taxi_trips
-        file: data/taxi_trips/all_trips.csv
-        keys:
-        - VendorID
-        - lpep_pickup_datetime
       - entity: data_dictionary
         file: data/data_dictionary.csv
         keys:
         - Field
+      #- entity: taxi_trips
+      #  file: data/taxi_trips/all_trips.csv
+      #  keys:
+      #  - VendorID
+      #  - lpep_pickup_datetime
   loaders:
   - name: target-postgres
     variant: datamill-co
     config:
+      #host: docker.for.mac.localhost
+      #port: 5432
+      #user: rkooijman
+      #dbname: nyc_taxi_trips
       postgres_host: docker.for.mac.localhost
       postgres_username: rkooijman
       postgres_database: nyc_taxi_trips
