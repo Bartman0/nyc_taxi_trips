@@ -1,8 +1,8 @@
 with final as (
 
-    select Field
-    , Description
-    from data_dictionary
+select Field
+, Description
+from data_dictionary
 
 )
 
