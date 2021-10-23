@@ -1,3 +1,8 @@
+{{ config(materialized='table',
+    indexes=[
+      {'columns': ['locationid']},
+    ]) }}
+
 with final as (
 
 select tz.locationid::int

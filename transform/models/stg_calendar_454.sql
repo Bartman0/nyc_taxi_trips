@@ -19,9 +19,9 @@ select date::date
 , fiscalquarteryear::int
 , dayofmonthnumber::int
 , dayname
-, fiscalyear::int || lpad(fiscalweekofyear, 2, '0') year_week
+, fiscalyear::int || '-' || lpad(fiscalweekofyear, 2, '0') fiscalyear_week
 , row_number() over (order by date desc)
-from calendar_454 c
+from calendar_454
 
 )
 

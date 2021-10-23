@@ -1,4 +1,9 @@
-{{ config(materialized='table', unlogged=True) }}
+{{ config(materialized='table', unlogged=True,
+    indexes=[
+      {'columns': ['date']},
+      {'columns': ['pulocationid']},
+      {'columns': ['dolocationid']}
+    ]) }}
 
 with final as (
 
