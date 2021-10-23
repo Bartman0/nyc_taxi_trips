@@ -1,3 +1,10 @@
+{{ config(
+    materialized = 'table',
+    indexes=[
+      {'columns': ['date'], 'unique': True},
+    ]
+)}}
+
 with final as (
     
 select date::date

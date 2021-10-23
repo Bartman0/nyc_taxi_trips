@@ -1,3 +1,10 @@
+{{ config(
+    materialized = 'table',
+    indexes=[
+      {'columns': ['year_week'], 'unique': True},
+    ]
+)}}
+
 with group_by_week as (
     
 select fiscalyear::int

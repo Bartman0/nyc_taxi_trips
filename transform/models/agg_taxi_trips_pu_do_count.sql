@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized='table', unlogged=True) }}
 
 with final as (
 

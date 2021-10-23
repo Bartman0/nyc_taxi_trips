@@ -30,7 +30,7 @@ and extract(year from lpep_pickup_datetime) between 2017 and 2020    -- only kee
 and extract(year from lpep_dropoff_datetime) between 2017 and 2020   -- only keep 2017 to 2020
 and pulocationid is not null    -- pick up location is known
 and dolocationid is not null    -- drop off location is known
-and extract(epoch from greatest(lpep_pickup_datetime,lpep_dropoff_datetime)-least(lpep_pickup_datetime,lpep_dropoff_datetime)) > 24*3600 -- trips longer than 1 day = 24 hour
+and extract(epoch from greatest(lpep_pickup_datetime,lpep_dropoff_datetime)-least(lpep_pickup_datetime,lpep_dropoff_datetime)) < 24*3600 -- no trips longer than 1 day = 24 hour
 and (trip_distance <> 0         -- distance <> 0 or 
 or fare_amount <> 0)            -- fare amount <> 0
 
