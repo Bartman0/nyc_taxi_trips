@@ -1,0 +1,963 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20213.21.0917.1006                               -->
+<datasource formatted-name='agg_taxi_trips_location_average_fare_distance+ (nyc_taxi_trips)' inline='true' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.InequalityRelationships.true...InequalityRelationships />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+  </document-format-change-manifest>
+  <connection class='federated'>
+    <named-connections>
+      <named-connection caption='localhost' name='postgres.0qiwger0yb6fs3188dq2b0o92lil'>
+        <connection authentication='username-password' class='postgres' dbname='nyc_taxi_trips' one-time-sql='' port='5432' server='localhost' username='rkooijman' />
+      </named-connection>
+    </named-connections>
+    <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='agg_taxi_trips_location_average_fare_distance' table='[public].[agg_taxi_trips_location_average_fare_distance]' type='table' />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+      <relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='agg_taxi_trips_location_average_fare_distance' table='[public].[agg_taxi_trips_location_average_fare_distance]' type='table' />
+      <relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='stg_calendar_454' table='[public].[stg_calendar_454]' type='table' />
+      <relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='stg_calendar_week' table='[public].[stg_calendar_week]' type='table' />
+      <relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='tgt_calendar_week_span' table='[public].[tgt_calendar_week_span]' type='table' />
+      <relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='stg_taxi_zones' table='[public].[stg_taxi_zones]' type='table' />
+      <relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='stg_taxi_zones1' table='[public].[stg_taxi_zones]' type='table' />
+    </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+    <cols>
+      <map key='[average_distance]' value='[agg_taxi_trips_location_average_fare_distance].[average_distance]' />
+      <map key='[average_fare]' value='[agg_taxi_trips_location_average_fare_distance].[average_fare]' />
+      <map key='[borough (stg_taxi_zones1)]' value='[stg_taxi_zones1].[borough]' />
+      <map key='[borough]' value='[stg_taxi_zones].[borough]' />
+      <map key='[date (stg_calendar_454)]' value='[stg_calendar_454].[date]' />
+      <map key='[date]' value='[agg_taxi_trips_location_average_fare_distance].[date]' />
+      <map key='[dayname]' value='[stg_calendar_454].[dayname]' />
+      <map key='[dayofmonthnumber]' value='[stg_calendar_454].[dayofmonthnumber]' />
+      <map key='[dayofweek]' value='[stg_calendar_454].[dayofweek]' />
+      <map key='[dolocationid]' value='[agg_taxi_trips_location_average_fare_distance].[dolocationid]' />
+      <map key='[fiscalmonthname]' value='[stg_calendar_454].[fiscalmonthname]' />
+      <map key='[fiscalmonthnumber]' value='[stg_calendar_454].[fiscalmonthnumber]' />
+      <map key='[fiscalmonthofquarter]' value='[stg_calendar_454].[fiscalmonthofquarter]' />
+      <map key='[fiscalmonthyear]' value='[stg_calendar_454].[fiscalmonthyear]' />
+      <map key='[fiscalquarter]' value='[stg_calendar_454].[fiscalquarter]' />
+      <map key='[fiscalquarteryear]' value='[stg_calendar_454].[fiscalquarteryear]' />
+      <map key='[fiscalweekofyear (stg_calendar_week)]' value='[stg_calendar_week].[fiscalweekofyear]' />
+      <map key='[fiscalweekofyear]' value='[stg_calendar_454].[fiscalweekofyear]' />
+      <map key='[fiscalyear (stg_calendar_week)]' value='[stg_calendar_week].[fiscalyear]' />
+      <map key='[fiscalyear]' value='[stg_calendar_454].[fiscalyear]' />
+      <map key='[fiscalyear_week (stg_calendar_week)]' value='[stg_calendar_week].[fiscalyear_week]' />
+      <map key='[fiscalyear_week]' value='[stg_calendar_454].[fiscalyear_week]' />
+      <map key='[fiscalyear_week_from]' value='[tgt_calendar_week_span].[fiscalyear_week_from]' />
+      <map key='[fiscalyear_week_to]' value='[tgt_calendar_week_span].[fiscalyear_week_to]' />
+      <map key='[isodow]' value='[agg_taxi_trips_location_average_fare_distance].[isodow]' />
+      <map key='[locationid (stg_taxi_zones1)]' value='[stg_taxi_zones1].[locationid]' />
+      <map key='[locationid]' value='[stg_taxi_zones].[locationid]' />
+      <map key='[number_of_trips]' value='[agg_taxi_trips_location_average_fare_distance].[number_of_trips]' />
+      <map key='[pulocationid]' value='[agg_taxi_trips_location_average_fare_distance].[pulocationid]' />
+      <map key='[row_number]' value='[stg_calendar_454].[row_number]' />
+      <map key='[sequence_desc]' value='[stg_calendar_week].[sequence_desc]' />
+      <map key='[service_zone (stg_taxi_zones1)]' value='[stg_taxi_zones1].[service_zone]' />
+      <map key='[service_zone]' value='[stg_taxi_zones].[service_zone]' />
+      <map key='[span]' value='[tgt_calendar_week_span].[span]' />
+      <map key='[zone (stg_taxi_zones1)]' value='[stg_taxi_zones1].[zone]' />
+      <map key='[zone]' value='[stg_taxi_zones].[zone]' />
+    </cols>
+    <metadata-records>
+      <metadata-record class='column'>
+        <remote-name>date</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[date]</local-name>
+        <parent-name>[agg_taxi_trips_location_average_fare_distance]</parent-name>
+        <remote-alias>date</remote-alias>
+        <ordinal>1</ordinal>
+        <local-type>date</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[agg_taxi_trips_location_average_fare_distance_94C701E4C9BA4BAEB813C2933A824715]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>pulocationid</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[pulocationid]</local-name>
+        <parent-name>[agg_taxi_trips_location_average_fare_distance]</parent-name>
+        <remote-alias>pulocationid</remote-alias>
+        <ordinal>2</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[agg_taxi_trips_location_average_fare_distance_94C701E4C9BA4BAEB813C2933A824715]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>dolocationid</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[dolocationid]</local-name>
+        <parent-name>[agg_taxi_trips_location_average_fare_distance]</parent-name>
+        <remote-alias>dolocationid</remote-alias>
+        <ordinal>3</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[agg_taxi_trips_location_average_fare_distance_94C701E4C9BA4BAEB813C2933A824715]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>isodow</remote-name>
+        <remote-type>131</remote-type>
+        <local-name>[isodow]</local-name>
+        <parent-name>[agg_taxi_trips_location_average_fare_distance]</parent-name>
+        <remote-alias>isodow</remote-alias>
+        <ordinal>4</ordinal>
+        <local-type>real</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>17</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[agg_taxi_trips_location_average_fare_distance_94C701E4C9BA4BAEB813C2933A824715]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>average_fare</remote-name>
+        <remote-type>131</remote-type>
+        <local-name>[average_fare]</local-name>
+        <parent-name>[agg_taxi_trips_location_average_fare_distance]</parent-name>
+        <remote-alias>average_fare</remote-alias>
+        <ordinal>5</ordinal>
+        <local-type>real</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>17</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[agg_taxi_trips_location_average_fare_distance_94C701E4C9BA4BAEB813C2933A824715]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>average_distance</remote-name>
+        <remote-type>131</remote-type>
+        <local-name>[average_distance]</local-name>
+        <parent-name>[agg_taxi_trips_location_average_fare_distance]</parent-name>
+        <remote-alias>average_distance</remote-alias>
+        <ordinal>6</ordinal>
+        <local-type>real</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>17</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[agg_taxi_trips_location_average_fare_distance_94C701E4C9BA4BAEB813C2933A824715]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>number_of_trips</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[number_of_trips]</local-name>
+        <parent-name>[agg_taxi_trips_location_average_fare_distance]</parent-name>
+        <remote-alias>number_of_trips</remote-alias>
+        <ordinal>7</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[agg_taxi_trips_location_average_fare_distance_94C701E4C9BA4BAEB813C2933A824715]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>date</remote-name>
+        <remote-type>7</remote-type>
+        <local-name>[date (stg_calendar_454)]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>date</remote-alias>
+        <ordinal>9</ordinal>
+        <local-type>date</local-type>
+        <aggregation>Year</aggregation>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalyear</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[fiscalyear]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>fiscalyear</remote-alias>
+        <ordinal>10</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalquarter</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[fiscalquarter]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>fiscalquarter</remote-alias>
+        <ordinal>11</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalmonthnumber</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[fiscalmonthnumber]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>fiscalmonthnumber</remote-alias>
+        <ordinal>12</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalmonthofquarter</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[fiscalmonthofquarter]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>fiscalmonthofquarter</remote-alias>
+        <ordinal>13</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalweekofyear</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[fiscalweekofyear]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>fiscalweekofyear</remote-alias>
+        <ordinal>14</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>dayofweek</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[dayofweek]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>dayofweek</remote-alias>
+        <ordinal>15</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalmonthname</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[fiscalmonthname]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>fiscalmonthname</remote-alias>
+        <ordinal>16</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalmonthyear</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[fiscalmonthyear]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>fiscalmonthyear</remote-alias>
+        <ordinal>17</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalquarteryear</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[fiscalquarteryear]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>fiscalquarteryear</remote-alias>
+        <ordinal>18</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>dayofmonthnumber</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[dayofmonthnumber]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>dayofmonthnumber</remote-alias>
+        <ordinal>19</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>dayname</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[dayname]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>dayname</remote-alias>
+        <ordinal>20</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalyear_week</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[fiscalyear_week]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>fiscalyear_week</remote-alias>
+        <ordinal>21</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>row_number</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[row_number]</local-name>
+        <parent-name>[stg_calendar_454]</parent-name>
+        <remote-alias>row_number</remote-alias>
+        <ordinal>22</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalyear</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[fiscalyear (stg_calendar_week)]</local-name>
+        <parent-name>[stg_calendar_week]</parent-name>
+        <remote-alias>fiscalyear</remote-alias>
+        <ordinal>24</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_week_B7B4627A3E244D2A88992758A9A45F10]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalweekofyear</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[fiscalweekofyear (stg_calendar_week)]</local-name>
+        <parent-name>[stg_calendar_week]</parent-name>
+        <remote-alias>fiscalweekofyear</remote-alias>
+        <ordinal>25</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_week_B7B4627A3E244D2A88992758A9A45F10]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalyear_week</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[fiscalyear_week (stg_calendar_week)]</local-name>
+        <parent-name>[stg_calendar_week]</parent-name>
+        <remote-alias>fiscalyear_week</remote-alias>
+        <ordinal>26</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_week_B7B4627A3E244D2A88992758A9A45F10]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>sequence_desc</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[sequence_desc]</local-name>
+        <parent-name>[stg_calendar_week]</parent-name>
+        <remote-alias>sequence_desc</remote-alias>
+        <ordinal>27</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_calendar_week_B7B4627A3E244D2A88992758A9A45F10]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>span</remote-name>
+        <remote-type>20</remote-type>
+        <local-name>[span]</local-name>
+        <parent-name>[tgt_calendar_week_span]</parent-name>
+        <remote-alias>span</remote-alias>
+        <ordinal>29</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>19</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tgt_calendar_week_span_1740A3BABE6C469EBEAB84FB599D20F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalyear_week_from</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[fiscalyear_week_from]</local-name>
+        <parent-name>[tgt_calendar_week_span]</parent-name>
+        <remote-alias>fiscalyear_week_from</remote-alias>
+        <ordinal>30</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tgt_calendar_week_span_1740A3BABE6C469EBEAB84FB599D20F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>fiscalyear_week_to</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[fiscalyear_week_to]</local-name>
+        <parent-name>[tgt_calendar_week_span]</parent-name>
+        <remote-alias>fiscalyear_week_to</remote-alias>
+        <ordinal>31</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[tgt_calendar_week_span_1740A3BABE6C469EBEAB84FB599D20F0]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>locationid</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[locationid]</local-name>
+        <parent-name>[stg_taxi_zones]</parent-name>
+        <remote-alias>locationid</remote-alias>
+        <ordinal>33</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_taxi_zones_0AA549BD4DD449ADA07E63B08BEC287C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>borough</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[borough]</local-name>
+        <parent-name>[stg_taxi_zones]</parent-name>
+        <remote-alias>borough</remote-alias>
+        <ordinal>34</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_taxi_zones_0AA549BD4DD449ADA07E63B08BEC287C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>zone</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[zone]</local-name>
+        <parent-name>[stg_taxi_zones]</parent-name>
+        <remote-alias>zone</remote-alias>
+        <ordinal>35</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_taxi_zones_0AA549BD4DD449ADA07E63B08BEC287C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>service_zone</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[service_zone]</local-name>
+        <parent-name>[stg_taxi_zones]</parent-name>
+        <remote-alias>service_zone</remote-alias>
+        <ordinal>36</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_taxi_zones_0AA549BD4DD449ADA07E63B08BEC287C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>locationid</remote-name>
+        <remote-type>3</remote-type>
+        <local-name>[locationid (stg_taxi_zones1)]</local-name>
+        <parent-name>[stg_taxi_zones1]</parent-name>
+        <remote-alias>locationid</remote-alias>
+        <ordinal>38</ordinal>
+        <local-type>integer</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>10</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_taxi_zones_CCACA11F306D4F78B8B93B219D14389F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>borough</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[borough (stg_taxi_zones1)]</local-name>
+        <parent-name>[stg_taxi_zones1]</parent-name>
+        <remote-alias>borough</remote-alias>
+        <ordinal>39</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_taxi_zones_CCACA11F306D4F78B8B93B219D14389F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>zone</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[zone (stg_taxi_zones1)]</local-name>
+        <parent-name>[stg_taxi_zones1]</parent-name>
+        <remote-alias>zone</remote-alias>
+        <ordinal>40</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_taxi_zones_CCACA11F306D4F78B8B93B219D14389F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>service_zone</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[service_zone (stg_taxi_zones1)]</local-name>
+        <parent-name>[stg_taxi_zones1]</parent-name>
+        <remote-alias>service_zone</remote-alias>
+        <ordinal>41</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[stg_taxi_zones_CCACA11F306D4F78B8B93B219D14389F]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+    </metadata-records>
+  </connection>
+  <aliases enabled='yes' />
+  <column caption='Fiscal year week span equal to parameter' datatype='boolean' name='[Calculation_4991255055984267264]' role='dimension' type='nominal'>
+    <calculation class='tableau' formula='[span]=[Parameters].[Parameter 1]' />
+  </column>
+  <column caption='Fiscal year week equal to parameter' datatype='boolean' name='[Calculation_4991255055984758785]' role='dimension' type='nominal'>
+    <calculation class='tableau' formula='[fiscalyear_week_to]=[Parameters].[Parameter 2]' />
+  </column>
+  <_.fcp.ObjectModelTableType.true...column caption='agg_taxi_trips_location_average_fare_distance' datatype='table' name='[__tableau_internal_object_id__].[agg_taxi_trips_location_average_fare_distance_94C701E4C9BA4BAEB813C2933A824715]' role='measure' type='quantitative' />
+  <_.fcp.ObjectModelTableType.true...column caption='stg_calendar_454' datatype='table' name='[__tableau_internal_object_id__].[stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68]' role='measure' type='quantitative' />
+  <_.fcp.ObjectModelTableType.true...column caption='stg_calendar_week' datatype='table' name='[__tableau_internal_object_id__].[stg_calendar_week_B7B4627A3E244D2A88992758A9A45F10]' role='measure' type='quantitative' />
+  <_.fcp.ObjectModelTableType.true...column caption='stg_taxi_zones_pu' datatype='table' name='[__tableau_internal_object_id__].[stg_taxi_zones_0AA549BD4DD449ADA07E63B08BEC287C]' role='measure' type='quantitative' />
+  <_.fcp.ObjectModelTableType.true...column caption='stg_taxi_zones_do' datatype='table' name='[__tableau_internal_object_id__].[stg_taxi_zones_CCACA11F306D4F78B8B93B219D14389F]' role='measure' type='quantitative' />
+  <_.fcp.ObjectModelTableType.true...column caption='tgt_calendar_week_span' datatype='table' name='[__tableau_internal_object_id__].[tgt_calendar_week_span_1740A3BABE6C469EBEAB84FB599D20F0]' role='measure' type='quantitative' />
+  <column aggregation='Avg' caption='Average Distance' datatype='real' default-format='n#,##0.00;-#,##0.00' name='[average_distance]' role='measure' type='quantitative' />
+  <column aggregation='Avg' caption='Average Fare' datatype='real' default-format='n#,##0.00;-#,##0.00' name='[average_fare]' role='measure' type='quantitative' />
+  <column caption='Borough (Stg Taxi Zones1)' datatype='string' name='[borough (stg_taxi_zones1)]' role='dimension' type='nominal' />
+  <column caption='Borough' datatype='string' name='[borough]' role='dimension' type='nominal' />
+  <column caption='Date (Stg Calendar 454)' datatype='date' name='[date (stg_calendar_454)]' role='dimension' type='ordinal' />
+  <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+  <column caption='Dayname' datatype='string' name='[dayname]' role='dimension' type='nominal' />
+  <column aggregation='Sum' caption='Dayofmonthnumber' datatype='integer' name='[dayofmonthnumber]' role='dimension' type='ordinal' />
+  <column aggregation='Sum' caption='Dayofweek' datatype='integer' name='[dayofweek]' role='dimension' type='ordinal' />
+  <column aggregation='Sum' caption='Dolocationid' datatype='integer' name='[dolocationid]' role='dimension' type='ordinal' />
+  <column caption='Fiscalmonthname' datatype='string' name='[fiscalmonthname]' role='dimension' type='nominal' />
+  <column aggregation='Sum' caption='Fiscalmonthnumber' datatype='integer' name='[fiscalmonthnumber]' role='dimension' type='ordinal' />
+  <column aggregation='Sum' caption='Fiscalmonthofquarter' datatype='integer' name='[fiscalmonthofquarter]' role='dimension' type='ordinal' />
+  <column caption='Fiscalmonthyear' datatype='string' name='[fiscalmonthyear]' role='dimension' type='nominal' />
+  <column aggregation='Sum' caption='Fiscalquarter' datatype='integer' name='[fiscalquarter]' role='dimension' type='ordinal' />
+  <column aggregation='Sum' caption='Fiscalquarteryear' datatype='integer' name='[fiscalquarteryear]' role='dimension' type='ordinal' />
+  <column aggregation='Sum' caption='Fiscalweekofyear (Stg Calendar Week)' datatype='integer' name='[fiscalweekofyear (stg_calendar_week)]' role='dimension' type='ordinal' />
+  <column aggregation='Sum' caption='Fiscalweekofyear' datatype='integer' name='[fiscalweekofyear]' role='dimension' type='ordinal' />
+  <column aggregation='Sum' caption='Fiscalyear (Stg Calendar Week)' datatype='integer' name='[fiscalyear (stg_calendar_week)]' role='dimension' type='ordinal' />
+  <column aggregation='Sum' caption='Fiscalyear' datatype='integer' name='[fiscalyear]' role='dimension' type='ordinal' />
+  <column caption='Fiscalyear Week (Stg Calendar Week)' datatype='string' name='[fiscalyear_week (stg_calendar_week)]' role='dimension' type='nominal' />
+  <column caption='Fiscalyear Week' datatype='string' name='[fiscalyear_week]' role='dimension' type='nominal' />
+  <column caption='Fiscalyear Week From' datatype='string' name='[fiscalyear_week_from]' role='dimension' type='nominal' />
+  <column caption='Fiscalyear Week To' datatype='string' name='[fiscalyear_week_to]' role='dimension' type='nominal' />
+  <column aggregation='Sum' caption='Isodow' datatype='real' name='[isodow]' role='dimension' type='ordinal' />
+  <column aggregation='Sum' caption='Locationid (Stg Taxi Zones1)' datatype='integer' name='[locationid (stg_taxi_zones1)]' role='dimension' type='ordinal' />
+  <column aggregation='Sum' caption='Locationid' datatype='integer' name='[locationid]' role='dimension' type='ordinal' />
+  <column caption='Number Of Trips' datatype='integer' name='[number_of_trips]' role='measure' type='quantitative' />
+  <column aggregation='Sum' caption='Pulocationid' datatype='integer' name='[pulocationid]' role='dimension' type='ordinal' />
+  <column caption='Row Number' datatype='integer' name='[row_number]' role='dimension' type='ordinal' />
+  <column aggregation='Sum' caption='Sequence Desc' datatype='integer' name='[sequence_desc]' role='dimension' type='ordinal' />
+  <column caption='Service Zone (Stg Taxi Zones1)' datatype='string' name='[service_zone (stg_taxi_zones1)]' role='dimension' type='nominal' />
+  <column caption='Service Zone' datatype='string' name='[service_zone]' role='dimension' type='nominal' />
+  <column aggregation='Sum' caption='Span' datatype='integer' name='[span]' role='dimension' type='ordinal' />
+  <column caption='Zone (Stg Taxi Zones1)' datatype='string' name='[zone (stg_taxi_zones1)]' role='dimension' type='nominal' />
+  <column caption='Zone' datatype='string' name='[zone]' role='dimension' type='nominal' />
+  <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+  <semantic-values>
+    <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+  </semantic-values>
+  <datasource-dependencies datasource='Parameters'>
+    <column caption='Fiscal year week span' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='3'>
+      <calculation class='tableau' formula='3' />
+      <members>
+        <member value='1' />
+        <member value='2' />
+        <member value='3' />
+        <member value='4' />
+        <member value='5' />
+        <member value='6' />
+        <member value='7' />
+        <member value='8' />
+        <member value='9' />
+        <member value='10' />
+      </members>
+    </column>
+    <column caption='Fiscal year week' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;2020-37&quot;'>
+      <calculation class='tableau' formula='&quot;2020-37&quot;' />
+      <members>
+        <member value='&quot;2017-01&quot;' />
+        <member value='&quot;2017-02&quot;' />
+        <member value='&quot;2017-03&quot;' />
+        <member value='&quot;2017-04&quot;' />
+        <member value='&quot;2017-05&quot;' />
+        <member value='&quot;2017-06&quot;' />
+        <member value='&quot;2017-07&quot;' />
+        <member value='&quot;2017-08&quot;' />
+        <member value='&quot;2017-09&quot;' />
+        <member value='&quot;2017-10&quot;' />
+        <member value='&quot;2017-11&quot;' />
+        <member value='&quot;2017-12&quot;' />
+        <member value='&quot;2017-13&quot;' />
+        <member value='&quot;2017-14&quot;' />
+        <member value='&quot;2017-15&quot;' />
+        <member value='&quot;2017-16&quot;' />
+        <member value='&quot;2017-17&quot;' />
+        <member value='&quot;2017-18&quot;' />
+        <member value='&quot;2017-19&quot;' />
+        <member value='&quot;2017-20&quot;' />
+        <member value='&quot;2017-21&quot;' />
+        <member value='&quot;2017-22&quot;' />
+        <member value='&quot;2017-23&quot;' />
+        <member value='&quot;2017-24&quot;' />
+        <member value='&quot;2017-25&quot;' />
+        <member value='&quot;2017-26&quot;' />
+        <member value='&quot;2017-27&quot;' />
+        <member value='&quot;2017-28&quot;' />
+        <member value='&quot;2017-29&quot;' />
+        <member value='&quot;2017-30&quot;' />
+        <member value='&quot;2017-31&quot;' />
+        <member value='&quot;2017-32&quot;' />
+        <member value='&quot;2017-33&quot;' />
+        <member value='&quot;2017-34&quot;' />
+        <member value='&quot;2017-35&quot;' />
+        <member value='&quot;2017-36&quot;' />
+        <member value='&quot;2017-37&quot;' />
+        <member value='&quot;2017-38&quot;' />
+        <member value='&quot;2017-39&quot;' />
+        <member value='&quot;2017-40&quot;' />
+        <member value='&quot;2017-41&quot;' />
+        <member value='&quot;2017-42&quot;' />
+        <member value='&quot;2017-43&quot;' />
+        <member value='&quot;2017-44&quot;' />
+        <member value='&quot;2017-45&quot;' />
+        <member value='&quot;2017-46&quot;' />
+        <member value='&quot;2017-47&quot;' />
+        <member value='&quot;2017-48&quot;' />
+        <member value='&quot;2017-49&quot;' />
+        <member value='&quot;2017-50&quot;' />
+        <member value='&quot;2017-51&quot;' />
+        <member value='&quot;2017-52&quot;' />
+        <member value='&quot;2018-01&quot;' />
+        <member value='&quot;2018-02&quot;' />
+        <member value='&quot;2018-03&quot;' />
+        <member value='&quot;2018-04&quot;' />
+        <member value='&quot;2018-05&quot;' />
+        <member value='&quot;2018-06&quot;' />
+        <member value='&quot;2018-07&quot;' />
+        <member value='&quot;2018-08&quot;' />
+        <member value='&quot;2018-09&quot;' />
+        <member value='&quot;2018-10&quot;' />
+        <member value='&quot;2018-11&quot;' />
+        <member value='&quot;2018-12&quot;' />
+        <member value='&quot;2018-13&quot;' />
+        <member value='&quot;2018-14&quot;' />
+        <member value='&quot;2018-15&quot;' />
+        <member value='&quot;2018-16&quot;' />
+        <member value='&quot;2018-17&quot;' />
+        <member value='&quot;2018-18&quot;' />
+        <member value='&quot;2018-19&quot;' />
+        <member value='&quot;2018-20&quot;' />
+        <member value='&quot;2018-21&quot;' />
+        <member value='&quot;2018-22&quot;' />
+        <member value='&quot;2018-23&quot;' />
+        <member value='&quot;2018-24&quot;' />
+        <member value='&quot;2018-25&quot;' />
+        <member value='&quot;2018-26&quot;' />
+        <member value='&quot;2018-27&quot;' />
+        <member value='&quot;2018-28&quot;' />
+        <member value='&quot;2018-29&quot;' />
+        <member value='&quot;2018-30&quot;' />
+        <member value='&quot;2018-31&quot;' />
+        <member value='&quot;2018-32&quot;' />
+        <member value='&quot;2018-33&quot;' />
+        <member value='&quot;2018-34&quot;' />
+        <member value='&quot;2018-35&quot;' />
+        <member value='&quot;2018-36&quot;' />
+        <member value='&quot;2018-37&quot;' />
+        <member value='&quot;2018-38&quot;' />
+        <member value='&quot;2018-39&quot;' />
+        <member value='&quot;2018-40&quot;' />
+        <member value='&quot;2018-41&quot;' />
+        <member value='&quot;2018-42&quot;' />
+        <member value='&quot;2018-43&quot;' />
+        <member value='&quot;2018-44&quot;' />
+        <member value='&quot;2018-45&quot;' />
+        <member value='&quot;2018-46&quot;' />
+        <member value='&quot;2018-47&quot;' />
+        <member value='&quot;2018-48&quot;' />
+        <member value='&quot;2018-49&quot;' />
+        <member value='&quot;2018-50&quot;' />
+        <member value='&quot;2018-51&quot;' />
+        <member value='&quot;2018-52&quot;' />
+        <member value='&quot;2019-01&quot;' />
+        <member value='&quot;2019-02&quot;' />
+        <member value='&quot;2019-03&quot;' />
+        <member value='&quot;2019-04&quot;' />
+        <member value='&quot;2019-05&quot;' />
+        <member value='&quot;2019-06&quot;' />
+        <member value='&quot;2019-07&quot;' />
+        <member value='&quot;2019-08&quot;' />
+        <member value='&quot;2019-09&quot;' />
+        <member value='&quot;2019-10&quot;' />
+        <member value='&quot;2019-11&quot;' />
+        <member value='&quot;2019-12&quot;' />
+        <member value='&quot;2019-13&quot;' />
+        <member value='&quot;2019-14&quot;' />
+        <member value='&quot;2019-15&quot;' />
+        <member value='&quot;2019-16&quot;' />
+        <member value='&quot;2019-17&quot;' />
+        <member value='&quot;2019-18&quot;' />
+        <member value='&quot;2019-19&quot;' />
+        <member value='&quot;2019-20&quot;' />
+        <member value='&quot;2019-21&quot;' />
+        <member value='&quot;2019-22&quot;' />
+        <member value='&quot;2019-23&quot;' />
+        <member value='&quot;2019-24&quot;' />
+        <member value='&quot;2019-25&quot;' />
+        <member value='&quot;2019-26&quot;' />
+        <member value='&quot;2019-27&quot;' />
+        <member value='&quot;2019-28&quot;' />
+        <member value='&quot;2019-29&quot;' />
+        <member value='&quot;2019-30&quot;' />
+        <member value='&quot;2019-31&quot;' />
+        <member value='&quot;2019-32&quot;' />
+        <member value='&quot;2019-33&quot;' />
+        <member value='&quot;2019-34&quot;' />
+        <member value='&quot;2019-35&quot;' />
+        <member value='&quot;2019-36&quot;' />
+        <member value='&quot;2019-37&quot;' />
+        <member value='&quot;2019-38&quot;' />
+        <member value='&quot;2019-39&quot;' />
+        <member value='&quot;2019-40&quot;' />
+        <member value='&quot;2019-41&quot;' />
+        <member value='&quot;2019-42&quot;' />
+        <member value='&quot;2019-43&quot;' />
+        <member value='&quot;2019-44&quot;' />
+        <member value='&quot;2019-45&quot;' />
+        <member value='&quot;2019-46&quot;' />
+        <member value='&quot;2019-47&quot;' />
+        <member value='&quot;2019-48&quot;' />
+        <member value='&quot;2019-49&quot;' />
+        <member value='&quot;2019-50&quot;' />
+        <member value='&quot;2019-51&quot;' />
+        <member value='&quot;2019-52&quot;' />
+        <member value='&quot;2020-01&quot;' />
+        <member value='&quot;2020-02&quot;' />
+        <member value='&quot;2020-03&quot;' />
+        <member value='&quot;2020-04&quot;' />
+        <member value='&quot;2020-05&quot;' />
+        <member value='&quot;2020-06&quot;' />
+        <member value='&quot;2020-07&quot;' />
+        <member value='&quot;2020-08&quot;' />
+        <member value='&quot;2020-09&quot;' />
+        <member value='&quot;2020-10&quot;' />
+        <member value='&quot;2020-11&quot;' />
+        <member value='&quot;2020-12&quot;' />
+        <member value='&quot;2020-13&quot;' />
+        <member value='&quot;2020-14&quot;' />
+        <member value='&quot;2020-15&quot;' />
+        <member value='&quot;2020-16&quot;' />
+        <member value='&quot;2020-17&quot;' />
+        <member value='&quot;2020-18&quot;' />
+        <member value='&quot;2020-19&quot;' />
+        <member value='&quot;2020-20&quot;' />
+        <member value='&quot;2020-21&quot;' />
+        <member value='&quot;2020-22&quot;' />
+        <member value='&quot;2020-23&quot;' />
+        <member value='&quot;2020-24&quot;' />
+        <member value='&quot;2020-25&quot;' />
+        <member value='&quot;2020-26&quot;' />
+        <member value='&quot;2020-27&quot;' />
+        <member value='&quot;2020-28&quot;' />
+        <member value='&quot;2020-29&quot;' />
+        <member value='&quot;2020-30&quot;' />
+        <member value='&quot;2020-31&quot;' />
+        <member value='&quot;2020-32&quot;' />
+        <member value='&quot;2020-33&quot;' />
+        <member value='&quot;2020-34&quot;' />
+        <member value='&quot;2020-35&quot;' />
+        <member value='&quot;2020-36&quot;' />
+        <member value='&quot;2020-37&quot;' />
+        <member value='&quot;2020-38&quot;' />
+        <member value='&quot;2020-39&quot;' />
+        <member value='&quot;2020-40&quot;' />
+        <member value='&quot;2020-41&quot;' />
+        <member value='&quot;2020-42&quot;' />
+        <member value='&quot;2020-43&quot;' />
+        <member value='&quot;2020-44&quot;' />
+        <member value='&quot;2020-45&quot;' />
+        <member value='&quot;2020-46&quot;' />
+        <member value='&quot;2020-47&quot;' />
+        <member value='&quot;2020-48&quot;' />
+        <member value='&quot;2020-49&quot;' />
+        <member value='&quot;2020-50&quot;' />
+        <member value='&quot;2020-51&quot;' />
+        <member value='&quot;2020-52&quot;' />
+      </members>
+    </column>
+  </datasource-dependencies>
+  <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    <objects>
+      <object caption='agg_taxi_trips_location_average_fare_distance' id='agg_taxi_trips_location_average_fare_distance_94C701E4C9BA4BAEB813C2933A824715'>
+        <properties context=''>
+          <relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='agg_taxi_trips_location_average_fare_distance' table='[public].[agg_taxi_trips_location_average_fare_distance]' type='table' />
+        </properties>
+      </object>
+      <object caption='stg_calendar_454' id='stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68'>
+        <properties context=''>
+          <relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='stg_calendar_454' table='[public].[stg_calendar_454]' type='table' />
+        </properties>
+      </object>
+      <object caption='stg_calendar_week' id='stg_calendar_week_B7B4627A3E244D2A88992758A9A45F10'>
+        <properties context=''>
+          <relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='stg_calendar_week' table='[public].[stg_calendar_week]' type='table' />
+        </properties>
+      </object>
+      <object caption='stg_taxi_zones_pu' id='stg_taxi_zones_0AA549BD4DD449ADA07E63B08BEC287C'>
+        <properties context=''>
+          <relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='stg_taxi_zones' table='[public].[stg_taxi_zones]' type='table' />
+        </properties>
+      </object>
+      <object caption='stg_taxi_zones_do' id='stg_taxi_zones_CCACA11F306D4F78B8B93B219D14389F'>
+        <properties context=''>
+          <relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='stg_taxi_zones1' table='[public].[stg_taxi_zones]' type='table' />
+        </properties>
+      </object>
+      <object caption='tgt_calendar_week_span' id='tgt_calendar_week_span_1740A3BABE6C469EBEAB84FB599D20F0'>
+        <properties context=''>
+          <relation connection='postgres.0qiwger0yb6fs3188dq2b0o92lil' name='tgt_calendar_week_span' table='[public].[tgt_calendar_week_span]' type='table' />
+        </properties>
+      </object>
+    </objects>
+    <relationships>
+      <relationship>
+        <expression op='='>
+          <expression op='[date]' />
+          <expression op='[date (stg_calendar_454)]' />
+        </expression>
+        <first-end-point object-id='agg_taxi_trips_location_average_fare_distance_94C701E4C9BA4BAEB813C2933A824715' />
+        <second-end-point object-id='stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68' />
+      </relationship>
+      <relationship>
+        <expression op='='>
+          <expression op='[fiscalyear_week]' />
+          <expression op='[fiscalyear_week (stg_calendar_week)]' />
+        </expression>
+        <first-end-point object-id='stg_calendar_454_E1CC0F692D304BD2A1862DCBF4354B68' />
+        <second-end-point object-id='stg_calendar_week_B7B4627A3E244D2A88992758A9A45F10' />
+      </relationship>
+      <relationship>
+        <expression op='='>
+          <expression op='[pulocationid]' />
+          <expression op='[locationid]' />
+        </expression>
+        <first-end-point object-id='agg_taxi_trips_location_average_fare_distance_94C701E4C9BA4BAEB813C2933A824715' />
+        <second-end-point object-id='stg_taxi_zones_0AA549BD4DD449ADA07E63B08BEC287C' />
+      </relationship>
+      <relationship>
+        <expression op='='>
+          <expression op='[dolocationid]' />
+          <expression op='[locationid (stg_taxi_zones1)]' />
+        </expression>
+        <first-end-point object-id='agg_taxi_trips_location_average_fare_distance_94C701E4C9BA4BAEB813C2933A824715' />
+        <second-end-point object-id='stg_taxi_zones_CCACA11F306D4F78B8B93B219D14389F' />
+      </relationship>
+      <relationship>
+        <expression op='AND'>
+          <expression _.fcp.InequalityRelationships.false...op='=' _.fcp.InequalityRelationships.true...op='&gt;='>
+            <expression _.fcp.InequalityRelationships.false...op='[fiscalyear_week (stg_calendar_week) &gt;= fiscalyear_week_from]' _.fcp.InequalityRelationships.true...op='[fiscalyear_week (stg_calendar_week)]' />
+            <expression _.fcp.InequalityRelationships.false...op='[]' _.fcp.InequalityRelationships.true...op='[fiscalyear_week_from]' />
+          </expression>
+          <expression _.fcp.InequalityRelationships.false...op='=' _.fcp.InequalityRelationships.true...op='&lt;'>
+            <expression _.fcp.InequalityRelationships.false...op='[fiscalyear_week (stg_calendar_week) &lt; fiscalyear_week_to]' _.fcp.InequalityRelationships.true...op='[fiscalyear_week (stg_calendar_week)]' />
+            <expression _.fcp.InequalityRelationships.false...op='[]' _.fcp.InequalityRelationships.true...op='[fiscalyear_week_to]' />
+          </expression>
+        </expression>
+        <first-end-point object-id='stg_calendar_week_B7B4627A3E244D2A88992758A9A45F10' />
+        <second-end-point object-id='tgt_calendar_week_span_1740A3BABE6C469EBEAB84FB599D20F0' />
+      </relationship>
+    </relationships>
+  </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+</datasource>
