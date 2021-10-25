@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20213.21.0917.1006                               -->
+<datasource formatted-name='federated.1c9nvpa0c1tgsj1gpwgas1qlmaaq' inline='true' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+  </document-format-change-manifest>
+  <connection class='federated'>
+    <named-connections>
+      <named-connection caption='localhost' name='postgres.0zl0h2o0ggw8x019ev7r51qsumf1'>
+        <connection authentication='username-password' class='postgres' dbname='nyc_taxi_trips' one-time-sql='' port='5432' server='localhost' username='rkooijman' />
+      </named-connection>
+    </named-connections>
+    <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='postgres.0zl0h2o0ggw8x019ev7r51qsumf1' name='agg_taxi_trips_average_fare_distance' table='[public].[agg_taxi_trips_average_fare_distance]' type='table' />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='postgres.0zl0h2o0ggw8x019ev7r51qsumf1' name='agg_taxi_trips_average_fare_distance' table='[public].[agg_taxi_trips_average_fare_distance]' type='table' />
+    <metadata-records>
+      <metadata-record class='column'>
+        <remote-name>fiscalyear_week</remote-name>
+        <remote-type>129</remote-type>
+        <local-name>[fiscalyear_week]</local-name>
+        <parent-name>[agg_taxi_trips_average_fare_distance]</parent-name>
+        <remote-alias>fiscalyear_week</remote-alias>
+        <ordinal>1</ordinal>
+        <local-type>string</local-type>
+        <aggregation>Count</aggregation>
+        <width>2147483647</width>
+        <contains-null>true</contains-null>
+        <cast-to-local-type>true</cast-to-local-type>
+        <collation flag='0' name='binary' />
+        <attributes>
+          <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+        </attributes>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[agg_taxi_trips_average_fare_distance_FD42BCA7715D42F8B95CE4C598A29771]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>average_fare</remote-name>
+        <remote-type>131</remote-type>
+        <local-name>[average_fare]</local-name>
+        <parent-name>[agg_taxi_trips_average_fare_distance]</parent-name>
+        <remote-alias>average_fare</remote-alias>
+        <ordinal>2</ordinal>
+        <local-type>real</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>17</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[agg_taxi_trips_average_fare_distance_FD42BCA7715D42F8B95CE4C598A29771]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>average_distance</remote-name>
+        <remote-type>131</remote-type>
+        <local-name>[average_distance]</local-name>
+        <parent-name>[agg_taxi_trips_average_fare_distance]</parent-name>
+        <remote-alias>average_distance</remote-alias>
+        <ordinal>3</ordinal>
+        <local-type>real</local-type>
+        <aggregation>Sum</aggregation>
+        <precision>17</precision>
+        <contains-null>true</contains-null>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[agg_taxi_trips_average_fare_distance_FD42BCA7715D42F8B95CE4C598A29771]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+      </metadata-record>
+    </metadata-records>
+  </connection>
+  <aliases enabled='yes' />
+  <column caption='Fiscal year week equal to parameter' datatype='boolean' name='[Calculation_5414734158618726403]' role='dimension' type='nominal'>
+    <calculation class='tableau' formula='[fiscalyear_week]=[Parameters].[Parameter 1]' />
+  </column>
+  <_.fcp.ObjectModelTableType.true...column caption='agg_taxi_trips_average_fare_distance' datatype='table' name='[__tableau_internal_object_id__].[agg_taxi_trips_average_fare_distance_FD42BCA7715D42F8B95CE4C598A29771]' role='measure' type='quantitative' />
+  <column caption='Average Distance' datatype='real' name='[average_distance]' role='measure' type='quantitative' />
+  <column caption='Average Fare' datatype='real' name='[average_fare]' role='measure' type='quantitative' />
+  <column caption='Fiscalyear Week' datatype='string' name='[fiscalyear_week]' role='dimension' type='nominal' />
+  <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+  <semantic-values>
+    <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+  </semantic-values>
+  <date-options start-of-week='monday' />
+  <field-sort-info field-sort-order-type='custom-order'>
+    <field-sort-custom-order field='fiscalyear_week' />
+    <field-sort-custom-order field='Calculation_5414734158618726403' />
+    <field-sort-custom-order field='average_fare' />
+    <field-sort-custom-order field='average_distance' />
+  </field-sort-info>
+  <datasource-dependencies datasource='Parameters'>
+    <column caption='Fiscal year week' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;2020-36&quot;'>
+      <calculation class='tableau' formula='&quot;2020-36&quot;' />
+      <members>
+        <member value='&quot;2017-01&quot;' />
+        <member value='&quot;2017-02&quot;' />
+        <member value='&quot;2017-03&quot;' />
+        <member value='&quot;2017-04&quot;' />
+        <member value='&quot;2017-05&quot;' />
+        <member value='&quot;2017-06&quot;' />
+        <member value='&quot;2017-07&quot;' />
+        <member value='&quot;2017-08&quot;' />
+        <member value='&quot;2017-09&quot;' />
+        <member value='&quot;2017-10&quot;' />
+        <member value='&quot;2017-11&quot;' />
+        <member value='&quot;2017-12&quot;' />
+        <member value='&quot;2017-13&quot;' />
+        <member value='&quot;2017-14&quot;' />
+        <member value='&quot;2017-15&quot;' />
+        <member value='&quot;2017-16&quot;' />
+        <member value='&quot;2017-17&quot;' />
+        <member value='&quot;2017-18&quot;' />
+        <member value='&quot;2017-19&quot;' />
+        <member value='&quot;2017-20&quot;' />
+        <member value='&quot;2017-21&quot;' />
+        <member value='&quot;2017-22&quot;' />
+        <member value='&quot;2017-23&quot;' />
+        <member value='&quot;2017-24&quot;' />
+        <member value='&quot;2017-25&quot;' />
+        <member value='&quot;2017-26&quot;' />
+        <member value='&quot;2017-27&quot;' />
+        <member value='&quot;2017-28&quot;' />
+        <member value='&quot;2017-29&quot;' />
+        <member value='&quot;2017-30&quot;' />
+        <member value='&quot;2017-31&quot;' />
+        <member value='&quot;2017-32&quot;' />
+        <member value='&quot;2017-33&quot;' />
+        <member value='&quot;2017-34&quot;' />
+        <member value='&quot;2017-35&quot;' />
+        <member value='&quot;2017-36&quot;' />
+        <member value='&quot;2017-37&quot;' />
+        <member value='&quot;2017-38&quot;' />
+        <member value='&quot;2017-39&quot;' />
+        <member value='&quot;2017-40&quot;' />
+        <member value='&quot;2017-41&quot;' />
+        <member value='&quot;2017-42&quot;' />
+        <member value='&quot;2017-43&quot;' />
+        <member value='&quot;2017-44&quot;' />
+        <member value='&quot;2017-45&quot;' />
+        <member value='&quot;2017-46&quot;' />
+        <member value='&quot;2017-47&quot;' />
+        <member value='&quot;2017-48&quot;' />
+        <member value='&quot;2017-49&quot;' />
+        <member value='&quot;2017-50&quot;' />
+        <member value='&quot;2017-51&quot;' />
+        <member value='&quot;2017-52&quot;' />
+        <member value='&quot;2018-01&quot;' />
+        <member value='&quot;2018-02&quot;' />
+        <member value='&quot;2018-03&quot;' />
+        <member value='&quot;2018-04&quot;' />
+        <member value='&quot;2018-05&quot;' />
+        <member value='&quot;2018-06&quot;' />
+        <member value='&quot;2018-07&quot;' />
+        <member value='&quot;2018-08&quot;' />
+        <member value='&quot;2018-09&quot;' />
+        <member value='&quot;2018-10&quot;' />
+        <member value='&quot;2018-11&quot;' />
+        <member value='&quot;2018-12&quot;' />
+        <member value='&quot;2018-13&quot;' />
+        <member value='&quot;2018-14&quot;' />
+        <member value='&quot;2018-15&quot;' />
+        <member value='&quot;2018-16&quot;' />
+        <member value='&quot;2018-17&quot;' />
+        <member value='&quot;2018-18&quot;' />
+        <member value='&quot;2018-19&quot;' />
+        <member value='&quot;2018-20&quot;' />
+        <member value='&quot;2018-21&quot;' />
+        <member value='&quot;2018-22&quot;' />
+        <member value='&quot;2018-23&quot;' />
+        <member value='&quot;2018-24&quot;' />
+        <member value='&quot;2018-25&quot;' />
+        <member value='&quot;2018-26&quot;' />
+        <member value='&quot;2018-27&quot;' />
+        <member value='&quot;2018-28&quot;' />
+        <member value='&quot;2018-29&quot;' />
+        <member value='&quot;2018-30&quot;' />
+        <member value='&quot;2018-31&quot;' />
+        <member value='&quot;2018-32&quot;' />
+        <member value='&quot;2018-33&quot;' />
+        <member value='&quot;2018-34&quot;' />
+        <member value='&quot;2018-35&quot;' />
+        <member value='&quot;2018-36&quot;' />
+        <member value='&quot;2018-37&quot;' />
+        <member value='&quot;2018-38&quot;' />
+        <member value='&quot;2018-39&quot;' />
+        <member value='&quot;2018-40&quot;' />
+        <member value='&quot;2018-41&quot;' />
+        <member value='&quot;2018-42&quot;' />
+        <member value='&quot;2018-43&quot;' />
+        <member value='&quot;2018-44&quot;' />
+        <member value='&quot;2018-45&quot;' />
+        <member value='&quot;2018-46&quot;' />
+        <member value='&quot;2018-47&quot;' />
+        <member value='&quot;2018-48&quot;' />
+        <member value='&quot;2018-49&quot;' />
+        <member value='&quot;2018-50&quot;' />
+        <member value='&quot;2018-51&quot;' />
+        <member value='&quot;2018-52&quot;' />
+        <member value='&quot;2019-01&quot;' />
+        <member value='&quot;2019-02&quot;' />
+        <member value='&quot;2019-03&quot;' />
+        <member value='&quot;2019-04&quot;' />
+        <member value='&quot;2019-05&quot;' />
+        <member value='&quot;2019-06&quot;' />
+        <member value='&quot;2019-07&quot;' />
+        <member value='&quot;2019-08&quot;' />
+        <member value='&quot;2019-09&quot;' />
+        <member value='&quot;2019-10&quot;' />
+        <member value='&quot;2019-11&quot;' />
+        <member value='&quot;2019-12&quot;' />
+        <member value='&quot;2019-13&quot;' />
+        <member value='&quot;2019-14&quot;' />
+        <member value='&quot;2019-15&quot;' />
+        <member value='&quot;2019-16&quot;' />
+        <member value='&quot;2019-17&quot;' />
+        <member value='&quot;2019-18&quot;' />
+        <member value='&quot;2019-19&quot;' />
+        <member value='&quot;2019-20&quot;' />
+        <member value='&quot;2019-21&quot;' />
+        <member value='&quot;2019-22&quot;' />
+        <member value='&quot;2019-23&quot;' />
+        <member value='&quot;2019-24&quot;' />
+        <member value='&quot;2019-25&quot;' />
+        <member value='&quot;2019-26&quot;' />
+        <member value='&quot;2019-27&quot;' />
+        <member value='&quot;2019-28&quot;' />
+        <member value='&quot;2019-29&quot;' />
+        <member value='&quot;2019-30&quot;' />
+        <member value='&quot;2019-31&quot;' />
+        <member value='&quot;2019-32&quot;' />
+        <member value='&quot;2019-33&quot;' />
+        <member value='&quot;2019-34&quot;' />
+        <member value='&quot;2019-35&quot;' />
+        <member value='&quot;2019-36&quot;' />
+        <member value='&quot;2019-37&quot;' />
+        <member value='&quot;2019-38&quot;' />
+        <member value='&quot;2019-39&quot;' />
+        <member value='&quot;2019-40&quot;' />
+        <member value='&quot;2019-41&quot;' />
+        <member value='&quot;2019-42&quot;' />
+        <member value='&quot;2019-43&quot;' />
+        <member value='&quot;2019-44&quot;' />
+        <member value='&quot;2019-45&quot;' />
+        <member value='&quot;2019-46&quot;' />
+        <member value='&quot;2019-47&quot;' />
+        <member value='&quot;2019-48&quot;' />
+        <member value='&quot;2019-49&quot;' />
+        <member value='&quot;2019-50&quot;' />
+        <member value='&quot;2019-51&quot;' />
+        <member value='&quot;2019-52&quot;' />
+        <member value='&quot;2020-01&quot;' />
+        <member value='&quot;2020-02&quot;' />
+        <member value='&quot;2020-03&quot;' />
+        <member value='&quot;2020-04&quot;' />
+        <member value='&quot;2020-05&quot;' />
+        <member value='&quot;2020-06&quot;' />
+        <member value='&quot;2020-07&quot;' />
+        <member value='&quot;2020-08&quot;' />
+        <member value='&quot;2020-09&quot;' />
+        <member value='&quot;2020-10&quot;' />
+        <member value='&quot;2020-11&quot;' />
+        <member value='&quot;2020-12&quot;' />
+        <member value='&quot;2020-13&quot;' />
+        <member value='&quot;2020-14&quot;' />
+        <member value='&quot;2020-15&quot;' />
+        <member value='&quot;2020-16&quot;' />
+        <member value='&quot;2020-17&quot;' />
+        <member value='&quot;2020-18&quot;' />
+        <member value='&quot;2020-19&quot;' />
+        <member value='&quot;2020-20&quot;' />
+        <member value='&quot;2020-21&quot;' />
+        <member value='&quot;2020-22&quot;' />
+        <member value='&quot;2020-23&quot;' />
+        <member value='&quot;2020-24&quot;' />
+        <member value='&quot;2020-25&quot;' />
+        <member value='&quot;2020-26&quot;' />
+        <member value='&quot;2020-27&quot;' />
+        <member value='&quot;2020-28&quot;' />
+        <member value='&quot;2020-29&quot;' />
+        <member value='&quot;2020-30&quot;' />
+        <member value='&quot;2020-31&quot;' />
+        <member value='&quot;2020-32&quot;' />
+        <member value='&quot;2020-33&quot;' />
+        <member value='&quot;2020-34&quot;' />
+        <member value='&quot;2020-35&quot;' />
+        <member value='&quot;2020-36&quot;' />
+        <member value='&quot;2020-37&quot;' />
+        <member value='&quot;2020-38&quot;' />
+        <member value='&quot;2020-39&quot;' />
+        <member value='&quot;2020-40&quot;' />
+        <member value='&quot;2020-41&quot;' />
+        <member value='&quot;2020-42&quot;' />
+        <member value='&quot;2020-43&quot;' />
+        <member value='&quot;2020-44&quot;' />
+        <member value='&quot;2020-45&quot;' />
+        <member value='&quot;2020-46&quot;' />
+        <member value='&quot;2020-47&quot;' />
+        <member value='&quot;2020-48&quot;' />
+        <member value='&quot;2020-49&quot;' />
+        <member value='&quot;2020-50&quot;' />
+        <member value='&quot;2020-51&quot;' />
+        <member value='&quot;2020-52&quot;' />
+      </members>
+    </column>
+  </datasource-dependencies>
+  <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    <objects>
+      <object caption='agg_taxi_trips_average_fare_distance' id='agg_taxi_trips_average_fare_distance_FD42BCA7715D42F8B95CE4C598A29771'>
+        <properties context=''>
+          <relation connection='postgres.0zl0h2o0ggw8x019ev7r51qsumf1' name='agg_taxi_trips_average_fare_distance' table='[public].[agg_taxi_trips_average_fare_distance]' type='table' />
+        </properties>
+      </object>
+    </objects>
+  </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+</datasource>

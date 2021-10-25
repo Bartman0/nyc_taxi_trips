@@ -419,6 +419,12 @@
   <column caption='Time period' datatype='string' name='[Calculation_4409657385150849026]' role='dimension' type='nominal'>
     <calculation class='tableau' formula='str([hour_slot]) + &quot;:00-&quot; + str([hour_slot]) + &quot;:59&quot;' />
   </column>
+  <column caption='Number of trips per span' datatype='real' name='[Calculation_5414734158604562433]' role='measure' type='quantitative'>
+    <calculation class='tableau' formula='[number_of_trips]/[Parameters].[Parameter 2]' />
+  </column>
+  <column caption='Dayname letter' datatype='string' name='[Calculation_5414734158611988482]' role='dimension' type='nominal'>
+    <calculation class='tableau' formula='LEFT([dayname],2)' />
+  </column>
   <_.fcp.ObjectModelTableType.true...column caption='agg_taxi_trips_date_hour_trip_count' datatype='table' name='[__tableau_internal_object_id__].[agg_taxi_trips_date_hour_trip_count_177B0989FE3B47BDB4A1388C93CC8A96]' role='measure' type='quantitative' />
   <_.fcp.ObjectModelTableType.true...column caption='stg_calendar_454' datatype='table' name='[__tableau_internal_object_id__].[stg_calendar_454_A30FA69C71414BB4BE3FF2AD54FCACE1]' role='measure' type='quantitative' />
   <_.fcp.ObjectModelTableType.true...column caption='stg_calendar_week' datatype='table' name='[__tableau_internal_object_id__].[stg_calendar_week_11475C0416C34674B0B79CB2C8061AF8]' role='measure' type='quantitative' />
@@ -448,7 +454,7 @@
   <column caption='Row Number' datatype='integer' name='[row_number]' role='dimension' type='ordinal' />
   <column aggregation='Sum' caption='Sequence Desc' datatype='integer' name='[sequence_desc]' role='dimension' type='ordinal' />
   <column aggregation='Sum' caption='Span' datatype='integer' name='[span]' role='dimension' type='ordinal' />
-  <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.949214' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.050786' show-structure='true' />
+  <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' _.fcp.SchemaViewerObjectModel.true...common-percentage='0.950262' _.fcp.SchemaViewerObjectModel.true...user-set-layout-v2='true' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.0497382' show-structure='true' />
   <semantic-values>
     <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
   </semantic-values>
@@ -735,8 +741,8 @@
             <expression _.fcp.InequalityRelationships.false...op='[fiscalyear_week (stg_calendar_week) &gt;= fiscalyear_week_from]' _.fcp.InequalityRelationships.true...op='[fiscalyear_week (stg_calendar_week)]' />
             <expression _.fcp.InequalityRelationships.false...op='[]' _.fcp.InequalityRelationships.true...op='[fiscalyear_week_from]' />
           </expression>
-          <expression _.fcp.InequalityRelationships.false...op='=' _.fcp.InequalityRelationships.true...op='&lt;='>
-            <expression _.fcp.InequalityRelationships.false...op='[fiscalyear_week (stg_calendar_week) &lt;= fiscalyear_week_to]' _.fcp.InequalityRelationships.true...op='[fiscalyear_week (stg_calendar_week)]' />
+          <expression _.fcp.InequalityRelationships.false...op='=' _.fcp.InequalityRelationships.true...op='&lt;'>
+            <expression _.fcp.InequalityRelationships.false...op='[fiscalyear_week (stg_calendar_week) &lt; fiscalyear_week_to]' _.fcp.InequalityRelationships.true...op='[fiscalyear_week (stg_calendar_week)]' />
             <expression _.fcp.InequalityRelationships.false...op='[]' _.fcp.InequalityRelationships.true...op='[fiscalyear_week_to]' />
           </expression>
         </expression>
